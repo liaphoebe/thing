@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    # command: 'yarn start'
+    ports:
+      - '5001:5001'
+    volumes:
+      - './src:/service/src'
+      - './package.json:/service/package.json'
+      - './yarn.lock:/service/yarn.lock'
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://postgres@postgres:5432/postgres
+
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    expose:
+      - "5432"
+    ports:
+      - "7482:5432"

@@ -1,0 +1,15 @@
+{
+  "short_name": "Rise Challenge",
+  "name": "Rise Tech Challenge",
+  "icons": [
+    {
+      "src": "https://images.riseusercontent.zone/w:16,f:png,r:true/rise-com/favicons/ff6602/favicon.svg",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

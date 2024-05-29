@@ -1,0 +1,24 @@
+{
+  "name": "rise-js-tech-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src",
+    "db:migrate": "knex migrate:latest",
+    "db:seed": "knex seed:run",
+    "setup": "yarn db:migrate && yarn db:seed",
+    "start:cold": "/service/wait-for-it.sh postgres:5432 -t 300 && yarn setup && yarn start"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.21.21",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
